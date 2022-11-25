@@ -4,6 +4,7 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using System.Runtime.Serialization;
 
 public class BodyTracker3D : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BodyTracker3D : MonoBehaviour
 
     private void Awake() {
         arHumanBodyManager =  GetComponent<ARHumanBodyManager>();
+        jointObjects = new Dictionary<int, GameObject>();
     }
 
     private void OnEnable() {
